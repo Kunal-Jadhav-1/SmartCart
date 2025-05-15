@@ -1,0 +1,13 @@
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary : #365347;
+  --color-secondary : #F1F1F1;
+  --color-ascent : #BA895C;
+  --font-logo: 'Cormorant SC', serif;
+}
+:root {
+
+  background-color: #365347;
+}
