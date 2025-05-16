@@ -20,7 +20,7 @@ const PriceHistoryModal = ({ product, onClose }) => {
   useEffect(() => {
     const fetchPriceHistory = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/tracker/price-history/${product.id}`);
+        const response = await fetch(`https://smartcart-yo4f.onrender.com/tracker/price-history/${product.id}`);
         if (response.ok) {
           const data = await response.json();
           setPriceHistory(data); 
