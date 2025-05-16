@@ -7,7 +7,7 @@ const LoadingPage = ({ onFinish }) => {
   const [hideFirstImage, setHideFirstImage] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setStartWipe(true), 3000);
+    const t1 = setTimeout(() => setStartWipe(true), 3300);
     const t2 = setTimeout(() => setHideFirstImage(true), 2800);
     const t3 = setTimeout(() => onFinish(), 4000);
 
