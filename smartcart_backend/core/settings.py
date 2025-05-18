@@ -37,7 +37,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'smartcart-yo4f.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",   # Local dev
-    "https://smart-cart-liart.vercel.app/",  # When deployed
+    "https://smart-cart-liart.vercel.app",  # When deployed
 ]
 # Application definition
 
