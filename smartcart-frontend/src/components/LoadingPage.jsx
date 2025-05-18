@@ -7,8 +7,8 @@ const LoadingPage = ({ onFinish }) => {
   const [hideFirstImage, setHideFirstImage] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setStartWipe(true), 2350);
-    const t2 = setTimeout(() => setHideFirstImage(true), 2450);
+    const t1 = setTimeout(() => setStartWipe(true), 2450);
+    const t2 = setTimeout(() => setHideFirstImage(true), 2200);
     const t3 = setTimeout(() => onFinish(), 3000);
 
     return () => {
@@ -52,7 +52,7 @@ const LoadingPage = ({ onFinish }) => {
             initial={{ y: "-100%", opacity: 1 }}
             animate={{ y: "180%", opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.75, ease: "backOut" }}
+            transition={{ duration: 1.5, ease: "backOut" }}
           />
         )}
       </AnimatePresence>
