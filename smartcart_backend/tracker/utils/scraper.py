@@ -77,33 +77,24 @@ def scrape_flipkart(url):
 
 # Function to scrape Myntra product details
 def scrape_myntra(url):
-    options = ChromeOptions()
-    # options.add_argument("--headless")
-    
     try:
-        driver = Chrome(options=options)
+        driver = get_driver()
         driver.get(url)
 
-        # Wait for the product name and price elements to load
         WebDriverWait(driver, 30).until(
             EC.presence_of_element_located((By.XPATH, "//h1[contains(@class,'pdp-title')]"))
         )
-
         WebDriverWait(driver, 30).until(
             EC.presence_of_element_located((By.XPATH, "//h1[contains(@class,'pdp-name')]"))
         )
-
-        # Wait for the price element
         WebDriverWait(driver, 30).until(
             EC.presence_of_element_located((By.XPATH, "//div[contains(@class,'pdp-price')]//span[@class='pdp-price']"))
         )
 
-        # Extract product name, price, and image URL
         product_name = driver.find_element(By.XPATH, "//h1[contains(@class,'pdp-title')]").text.strip() + " - " + driver.find_element(By.XPATH, "//h1[contains(@class,'pdp-name')]").text.strip()
         product_price = driver.find_element(By.XPATH, "//div[contains(@class,'pdp-price')]//span[@class='pdp-price']").text.strip()
         image_url = driver.find_element(By.XPATH, "//*[@id='mountRoot']/div/div[1]/main/div[2]/div[1]/div[1]/div/div[1]").get_attribute("style")
-
-        image_url = image_url.split('url("')[1].split('")')[0]  # Extract image URL from style attribute
+        image_url = image_url.split('url(\"')[1].split('\")')[0]
 
         print(f"Myntra - Product Name: {product_name}")
         print(f"Myntra - Price: {product_price}")
