@@ -9,7 +9,7 @@ const detectSite = (url) => {
 };
 
 const fetchProductDetails = async (url, site) => {
-  const response = await fetch(`http://localhost:8000/tracker/${site}/`, {
+  const response = await fetch(`https://smartcart-yo4f.onrender.com/tracker/${site}/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ url }),
@@ -71,7 +71,7 @@ const ProductInput = ({ addTrackedProduct }) => {
     };
 
     try {
-      const res = await fetch("http://localhost:8000/tracker/track-product/", {
+      const res = await fetch("https://smartcart-yo4f.onrender.com/tracker/track-product/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
