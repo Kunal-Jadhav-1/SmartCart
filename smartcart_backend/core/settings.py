@@ -33,11 +33,11 @@ SECRET_KEY = 'django-insecure-g3iq9jd+pa%3p7(mm!)0rnj+#m+vn_m(!94jxr+yo5ahy(3^3a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'smartcart-yo4f.onrender.com']
 
-S_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  
-    "https://smart-cart-liart.vercel.app/", 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",   # Local dev
+    "https://smart-cart-liart.vercel.app/",  # When deployed
 ]
 # Application definition
 
